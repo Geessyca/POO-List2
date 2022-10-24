@@ -15,7 +15,7 @@ class BankAccount{
 	
 	void withdrawal(double valor) {
 		 if (valor < 0) {
-		        throw new IllegalArgumentException("Você tentou sacar um valor negativo");
+		        throw new IllegalArgumentException("VocÃª tentou sacar um valor negativo");
 		    }
 		    if (this.balance < valor) {
 		        throw new InsufficientFunds(valor);
@@ -25,7 +25,7 @@ class BankAccount{
 	
 	void deposit(double valor) {
 		if (valor < 0) {	
-	        throw new IllegalArgumentException("Você tentou depositar um valor negativo");
+	        throw new IllegalArgumentException("VocÃª tentou depositar um valor negativo");
 	    } else {
 	        this.balance += valor;        
 	    }       
