@@ -3,8 +3,8 @@ package List2;
  
 class InsufficientFunds extends RuntimeException {
 
-    public InsufficientFunds(double valor) {
-        super("Saldo insuficiente para sacar o valor de: " + valor);
+    public InsufficientFunds(double withdrawalValue) {
+        super("Saldo insuficiente para sacar o valor de: " + withdrawalValue);
     }
 }
 class BankAccount{
@@ -13,21 +13,21 @@ class BankAccount{
 	double balance;
 	Date openingDate;
 	
-	void withdrawal(double valor) {
-		 if (valor < 0) {
+	void withdrawal(double withdrawalValue) {
+		 if (withdrawalValue < 0) {
 		        throw new IllegalArgumentException("Você tentou sacar um valor negativo");
 		    }
-		    if (this.balance < valor) {
-		        throw new InsufficientFunds(valor);
+		    if (this.balance < withdrawalValue) {
+		        throw new InsufficientFunds(withdrawalValue);
 		    }
-		    this.balance -= (valor + 0.10);
+		    this.balance -= (withdrawalValue + 0.10);
 	}
 	
-	void deposit(double valor) {
-		if (valor < 0) {	
+	void deposit(double depositValue) {
+		if (depositValue < 0) {	
 	        throw new IllegalArgumentException("Você tentou depositar um valor negativo");
 	    } else {
-	        this.balance += valor;        
+	        this.balance += depositValue;        
 	    }       
 	}
 	double calculationIncome() {
